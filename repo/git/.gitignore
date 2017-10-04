@@ -1,0 +1,3 @@
+# ignore editor backups and temp/lock files
+*~
+\#*
