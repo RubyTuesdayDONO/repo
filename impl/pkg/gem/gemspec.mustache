@@ -1,0 +1,25 @@
+# -*- encoding: utf-8 -*-
+lib = File.expand_path('../lib/', __FILE__)
+$:.unshift lib unless $:.include?(lib)
+
+require 'bundler/version'
+
+Gem::Specification.new do |s|
+  s.name        = "{{{name}}}"
+  s.version     = {{{version}}}
+  s.platform    = {{{platform}}}{{^platform}}Gem::Platform::RUBY{{/platform}}
+  s.authors     = [{{#authors}}'{{{name}}}'{{^last}}, {{/last}}{{/authors}}]
+  s.email       = [{{#authors}}'{{{email}}}'{{^last}}, {{/last}}{{/authors}}]
+  s.homepage    = '{{{url}}}'
+  s.summary     = {{{summary}}}
+  s.description = {{{description}}}
+
+  s.required_rubygems_version = '{{{rubygems_version}}}{{^rubygems_version}}>= 2{{/rubygems_version}}'
+  s.rubyforge_project         = '{{{rubyforge_project}}}'
+
+  s.add_development_dependency "rspec"
+
+  s.files        = Dir.glob('{bin,lib}/**/*') + %w(LICENSE README.md ROADMAP.md CHANGELOG.md)
+  s.executables  = [{{#executables}}'{{{name}}}'{{^last}}, {{/last}}{{/executables}}]
+  s.require_path = '{{{require_path}}}{{^require_path}}lib{{/require_path}}'
+end

@@ -1,0 +1,21 @@
+name: my-gem
+version: MyGem::VERSION
+# platform: Gem::Platform::RUBY
+authors:
+  - name: Reuben Garrett
+    email: ruby@rubydono.net
+    last: true
+homepage: https://example.com
+summary: My Special Gem
+description: Such a special gem -- so unique!
+# required_rubygems_version: >= 2
+rubyforge_project: my-gem
+files:
+  - LICENSE
+  - README.md
+#  - ROADMAP.md
+#  - CHANGELOG.md
+executables:
+  - name: mygem
+    last: true
+# require_path: lib = '{{{require_path}}}{{^require_path}}lib{{/require_path}}'
