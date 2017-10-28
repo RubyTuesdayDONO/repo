@@ -1,3 +1,15 @@
 # ignore editor backups and temp/lock files
 *~
 \#*
+
+# ignore archives
+*.tar
+*.gz
+*.tgz
+*.zip
+
+# ignore packages
+*.rpm
+*.gem
+*.deb
+*.phar
