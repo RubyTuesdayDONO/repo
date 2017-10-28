@@ -4,22 +4,27 @@ $:.unshift lib unless $:.include?(lib)
 
 require 'bundler/version'
 
+{{#require}}
+require '{{{path}}}'
+{{/require}}
+
 Gem::Specification.new do |s|
-  s.name        = "{{{name}}}"
+  s.name        = '{{{name}}}'
   s.version     = {{{version}}}
   s.platform    = {{{platform}}}{{^platform}}Gem::Platform::RUBY{{/platform}}
   s.authors     = [{{#authors}}'{{{name}}}'{{^last}}, {{/last}}{{/authors}}]
   s.email       = [{{#authors}}'{{{email}}}'{{^last}}, {{/last}}{{/authors}}]
-  s.homepage    = '{{{url}}}'
-  s.summary     = {{{summary}}}
-  s.description = {{{description}}}
+  s.homepage    = '{{{homepage}}}'
+  s.summary     = '{{{summary}}}'
+  s.description = '{{{description}}}'
+  s.license     = '{{{license}}}{{^license}}BSD-3-Clause{{/license}}'
 
   s.required_rubygems_version = '{{{rubygems_version}}}{{^rubygems_version}}>= 2{{/rubygems_version}}'
   s.rubyforge_project         = '{{{rubyforge_project}}}'
 
   s.add_development_dependency "rspec"
 
-  s.files        = Dir.glob('{bin,lib}/**/*') + %w(LICENSE README.md ROADMAP.md CHANGELOG.md)
+  s.files        = Dir.glob('{bin,lib}/**/*') + %w({{#files}}{{{path}}}{{^last}} {{/last}}{{/files}})
   s.executables  = [{{#executables}}'{{{name}}}'{{^last}}, {{/last}}{{/executables}}]
   s.require_path = '{{{require_path}}}{{^require_path}}lib{{/require_path}}'
 end
